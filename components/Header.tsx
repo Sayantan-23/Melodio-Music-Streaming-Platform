@@ -39,20 +39,20 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
   return (
     <div
       className={twMerge(
-        `h-fit bg-gradient-to-b from-emerald-800 p-6`,
+        `h-fit bg-gradient-to-b from-[#272727] p-6`,
         className
       )}
     >
       <div className="w-full mb-4 flex items-center justify-between">
         <div className="hidden md:flex gap-x-2 items-center">
           <button
-            className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition p-1"
+            className="rounded-full bg-black flex items-center justify-center opacity-75 hover:opacity-100 transition p-1"
             onClick={() => router.back()}
           >
             <RxCaretLeft size={30} className="text-white" />
           </button>
           <button
-            className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition p-1"
+            className="rounded-full bg-black flex items-center justify-center p-1 opacity-75 hover:opacity-100 transition"
             onClick={() => router.forward()}
           >
             <RxCaretRight size={30} className="text-white" />

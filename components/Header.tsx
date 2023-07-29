@@ -8,7 +8,8 @@ import { RxCaretLeft } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import { FaUserAlt } from "react-icons/fa";
+// import { FaUserAlt } from "react-icons/fa";
+import {SlUser} from "react-icons/sl"
 
 import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
@@ -76,10 +77,10 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                 Logout
               </Button>
               <Button
-                className="bg-white"
+                className="bg-black"
                 onClick={() => router.push("/account")}
               >
-                <FaUserAlt />
+                <SlUser className="text-white" />
               </Button>
             </div>
           ) : (

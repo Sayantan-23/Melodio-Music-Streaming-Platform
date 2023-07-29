@@ -1,9 +1,11 @@
 "use client";
 
 import Button from "@/components/Button";
+import usePlayer from "@/hooks/usePlayer";
 import useSubscribeModal from "@/hooks/useSubscribeModal";
 import { useUser } from "@/hooks/useUser";
 import { postData } from "@/libs/helpers";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -12,8 +14,20 @@ const AccountContent = () => {
   const router = useRouter();
   const subscribeModal = useSubscribeModal();
   const { isLoading, user, subscription } = useUser();
+  const player = usePlayer();
+  const supabaseClient = useSupabaseClient();
 
   const [loading, setLoading] = useState(false);
+
+  const handleLogout = async () => {
+    const { error } = await supabaseClient.auth.signOut();
+
+    player.reset();
+    router.push("/");
+
+    if (error) toast.error(error.message);
+    else toast.success("Logged Out");
+  };
 
   useEffect(() => {
     if (!isLoading && !user) {
@@ -47,6 +61,12 @@ const AccountContent = () => {
           <Button onClick={subscribeModal.onOpen} className="w-[300px]">
             Subscribe
           </Button>
+          <Button
+            className="bg-white px-6 py-2 w-[150px]"
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
         </div>
       )}
       {subscription && (
@@ -61,6 +81,12 @@ const AccountContent = () => {
             onClick={redirectToCustomerPortal}
           >
             Open customer portal
+          </Button>
+          <Button
+            className="bg-white px-6 py-2 w-[150px]"
+            onClick={handleLogout}
+          >
+            Logout
           </Button>
         </div>
       )}

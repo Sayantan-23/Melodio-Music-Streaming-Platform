@@ -2,20 +2,18 @@
 
 import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 import { RxCaretLeft } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-// import { FaUserAlt } from "react-icons/fa";
-import {SlUser} from "react-icons/sl"
+import { SlUser } from "react-icons/sl";
 
 import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
-import usePlayer from "@/hooks/usePlayer";
+import useSubscribeModal from "@/hooks/useSubscribeModal";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -26,18 +24,11 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
   const { onOpen } = useAuthModal();
 
-  const supabaseClient = useSupabaseClient();
   const { user } = useUser();
-  const player = usePlayer()
+  const subscribeModal = useSubscribeModal();
 
-  const handleLogout = async () => {
-    const { error } = await supabaseClient.auth.signOut();
-
-    player.reset()
-    router.refresh();
-
-    if (error) toast.error(error.message);
-    else toast.success("Logged Out");
+  const handleSubscriptionModal = () => {
+    return subscribeModal.onOpen();
   };
 
   return (
@@ -73,11 +64,14 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         <div className="flex justify-between items-center gap-x-4">
           {user ? (
             <div className="flex gap-x-4 items-center">
-              <Button className="bg-white px-6 py-2" onClick={handleLogout}>
-                Logout
+              <Button
+                className="bg-white px-6 py-2 whitespace-nowrap"
+                onClick={handleSubscriptionModal}
+              >
+                Explore Premium
               </Button>
               <Button
-                className="bg-black"
+                className="bg-black rounded-full"
                 onClick={() => router.push("/account")}
               >
                 <SlUser className="text-white" />

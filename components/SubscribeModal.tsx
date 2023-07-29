@@ -88,7 +88,7 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({ products }) => {
   }
 
   if (subscription) {
-    content = <div className="text-center">Already subscribed!!</div>;
+    content = <div className="text-center">You are already subscribed!!Enjoy your music...</div>;
   }
 
   return (

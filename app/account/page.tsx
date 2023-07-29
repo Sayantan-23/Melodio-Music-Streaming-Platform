@@ -7,7 +7,7 @@ const Account = () => {
       <Header className="form-bg-neutral-900">
         <div className="mb-2 flex flex-col gap-y-6">
           <h1 className="text-white text-3xl font-semibold">
-            Account Settings
+            Profile
           </h1>
         </div>
       </Header>

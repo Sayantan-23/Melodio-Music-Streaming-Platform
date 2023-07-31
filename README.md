@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# _Melodio_
 
-## Getting Started
+## Project Details
 
-First, run the development server:
+Melodio is a feature-packed music streaming app built using **NextJS** and **TypeScript**. Explore a wide range of songs, enjoy real-time search, and create personalized playlists. With **user authentication**, **social login**, and a seamless **music player**, Melodio offers an unparalleled musical experience. Unlock premium features with a **subscription system** and even **upload your own music** as a subscribed user. Join Melodio now and immerse yourself in a world of limitless tunes!
+
+### Live Link - [https://melodiotunes.vercel.app/](https://melodiotunes.vercel.app/)
+
+## Tools
+
+NextJS, TypeScript, RadixUI, TailwindCSS, Supabase, Stripe
+
+## How To Run Locally
+
+Just copy all the file then run these two commands -
+
+> To install all the dependencies -
+
+```bash
+npm i
+```
+
+> To start the project -
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**For testing a successful payment user has to use these details** -
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Card No.: 4242 4242 4242 4242
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Date: Use a valid future date.
 
-## Learn More
+- CVC: Any three digits.
 
-To learn more about Next.js, take a look at the following resources:
+- Other fields: Feel free to use any values.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Images
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Home
 
-## Deploy on Vercel
+![Screenshot (42)](https://github.com/Sayantan-23/Melodio-Music-Streaming-Platform/assets/110087385/12a72e67-59b7-4db4-97af-6c6ab5211988)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Sign up/ Login Modal
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Screenshot (41)](https://github.com/Sayantan-23/Melodio-Music-Streaming-Platform/assets/110087385/30611223-698b-40d7-a3cd-33715d3324da)
+
+### Search Page
+
+![Screenshot (43)](https://github.com/Sayantan-23/Melodio-Music-Streaming-Platform/assets/110087385/63ceabd8-8dcd-43ca-a149-b987fdd46074)
+
+### Liked Page
+
+![Screenshot (44)](https://github.com/Sayantan-23/Melodio-Music-Streaming-Platform/assets/110087385/620410fd-8de3-4571-aa0d-1a118e713326)
+
+### Account Page
+
+![Screenshot (45)](https://github.com/Sayantan-23/Melodio-Music-Streaming-Platform/assets/110087385/9be5ab17-925d-4cbe-9701-1a431d0f2bb8)

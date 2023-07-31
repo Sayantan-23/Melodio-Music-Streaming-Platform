@@ -5,11 +5,6 @@ import PageContent from "./components/PageContent";
 
 export const revalidate = 0;
 
-export const metadata = {
-  title: "Melodio",
-  description: "Indulge in Melody",
-};
-
 export default async function Home() {
   const songs = await getSongs();
 

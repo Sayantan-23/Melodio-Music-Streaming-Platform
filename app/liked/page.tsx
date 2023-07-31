@@ -5,11 +5,6 @@ import LikedSongs from "./components/LikedSongs";
 
 export const revalidate = 0;
 
-export const metadata = {
-  title: "Melodio",
-  description: "Indulge in Melody",
-};
-
 const Liked = async () => {
   const songs = await getLikedSongs();
 

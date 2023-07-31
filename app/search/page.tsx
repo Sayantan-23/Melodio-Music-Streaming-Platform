@@ -12,11 +12,6 @@ interface SearchProps {
 
 export const revalidate = 0;
 
-export const metadata = {
-  title: "Melodio",
-  description: "Indulge in Melody",
-};
-
 const Search = async ({ searchParams }: SearchProps) => {
   const songs = await getSongsByTitle(searchParams.title);
 

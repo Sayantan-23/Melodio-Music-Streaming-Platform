@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 import AccountContent from "./components/AccountContent";
 
-export const metadata = {
-  title: "Melodio",
-  description: "Indulge in Melody",
-};
+// export const metadata = {
+//   title: "Melodio",
+//   description: "Indulge in Melody",
+// };
 
 const Account = () => {
   return (

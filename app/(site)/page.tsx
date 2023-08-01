@@ -2,6 +2,7 @@ import getSongs from "@/actions/getSonga";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 import PageContent from "./components/PageContent";
+import { useUser } from "@supabase/auth-helpers-react";
 
 export const revalidate = 0;
 
@@ -19,7 +20,7 @@ export default async function Home() {
             <ListItem
               image="/images/liked.png"
               name="Liked Songs"
-              href="liked"
+              href="/liked"
             />
           </div>
         </div>

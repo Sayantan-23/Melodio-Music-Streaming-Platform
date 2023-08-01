@@ -1,8 +1,10 @@
 "use client";
 
+import { useUser } from "@/hooks/useUser";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaPlay } from "react-icons/fa";
+import useAuthModal from "@/hooks/useAuthModal";
 
 interface ListItemProps {
   image: string;
@@ -11,13 +13,21 @@ interface ListItemProps {
 }
 const ListItem: React.FC<ListItemProps> = ({ image, name, href }) => {
   const router = useRouter();
+  const { user } = useUser();
+  const authModal = useAuthModal();
 
   const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
     router.push(href);
   };
 
   return (
-    <button className="relative group flex items-center rounded-md overflow-hidden gap-x-4 bg-neutral-100/10 hover:bg-neutral-100/20 transition pr-4" onClick={onClick}>
+    <button
+      className="relative group flex items-center rounded-md overflow-hidden gap-x-4 bg-neutral-100/10 hover:bg-neutral-100/20 transition pr-4"
+      onClick={onClick}
+    >
       <div className="relative min-h-[64px] min-w-[64px]">
         <Image className="object-cover" fill src={image} alt="Image" />
       </div>

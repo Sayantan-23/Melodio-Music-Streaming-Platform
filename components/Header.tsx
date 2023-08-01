@@ -69,9 +69,9 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         </div>
         <div className="flex justify-between items-center gap-x-4">
           {user ? (
-            <div className="flex gap-x-4 items-center">
+            <div className="flex gap-x-2 sm:gap-x-4 items-center">
               <Button
-                className="bg-white px-6 py-2 whitespace-nowrap"
+                className="bg-white px-4 sm:px-6 py-2 whitespace-nowrap"
                 onClick={handleSubscriptionModal}
               >
                 Explore Premium
